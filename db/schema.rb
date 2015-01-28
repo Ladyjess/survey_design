@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150128181336) do
   create_table "questions", force: :cascade do |t|
     t.string   "open_question"
     t.boolean  "answered"
+    t.integer  "survey_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

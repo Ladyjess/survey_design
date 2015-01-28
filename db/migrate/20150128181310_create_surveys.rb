@@ -5,7 +5,5 @@ class CreateSurveys < ActiveRecord::Migration
 
       t.timestamps()
 
-     end
-   add_column(:questions, :survey_id, :integer)
-  end
+ end
 end
