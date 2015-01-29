@@ -1,0 +1,31 @@
+<h1><b>Survey Designer</b></h1>
+
+<p><b>Add a new survey:</b></p>
+
+<div class="jumbotron">
+  <form action='/surveys' method='post'>
+    <label for='survey_name'>Survey Name</label>
+    <input id='survey_name' name='survey_name' type='text'>
+
+    <button type="submit" class="btn btn-sm btn-primary">Add Survey</button>
+  </form>
+
+</div>
+
+<% if @surveys.any?() %>
+<p>Click on a survey to see its questions:</p>
+
+<ul>
+  <% @surveys.each do |survey| %>
+  <li><a href="/surveys/<%= survey.id() %>"><%= survey.survey_name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p><b>There are no surveys yet!</b></p>
+<% end %>
+
+
+
+</br>
+
+<a href = "/">Return to main menu </a>

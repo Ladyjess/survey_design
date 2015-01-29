@@ -1,0 +1,28 @@
+<h3>Questions</h3>
+
+
+<form action="/surveys/<%= @survey.id() %>/question_add" method="post">
+
+  <label for="open_question"></label>
+  <input id="open_question" name="open_question" type="text">
+
+  <button type="submit" class="btn btn-sm btn-primary">Add question</button>
+</form>
+
+<% if @survey.questions().any?() %>
+<h4>Here are all the questions:</h4>
+
+<ul>
+  <% @survey.questions.each() do |question| %>
+  <li><%= question.open_question %> <a href="/questions/<%= question.id() %>/edit">Update this question</a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>This survey has no questions yet!</p>
+<% end %>
+
+
+<p><a href="/surveys/<%= @survey.id() %>/edit">Edit or Delete <%= @survey.survey_name() %></a></p>
+
+
+<p><a href="/">Return to Main Page</a></p>

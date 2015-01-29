@@ -1,10 +1,10 @@
 development:
   adapter: postgresql
-  database: convenience_store_development
+  database: survey_development
   template: template0
 
 
 test:
   adapter: postgresql
-  database: convenience_store_test
+  database: survey_test
   template: template0

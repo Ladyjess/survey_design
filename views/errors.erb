@@ -1,0 +1,9 @@
+<h3>Oops, there were some errors:</h3>
+
+<ul>
+  <% @question.errors.full_message.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+
+<h3><a href="/">Return to the main page to try again</a></h3>
