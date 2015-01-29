@@ -69,7 +69,7 @@ get("/questions/:id/edit") do
   erb(:question_edit)
 end
 
-patch("/questions/") do
+patch("/questions/:id") do
   open_question = params.fetch("open_question")
   @question = Question.find(params.fetch("id").to_i())
   @question.update({:open_question => open_question})
@@ -77,7 +77,7 @@ patch("/questions/") do
   erb(:questions)
 end
 
-delete("/questions/") do
+delete("/questions/:id") do
   @question = Question.find(params.fetch("id").to_i())
   @question.delete()
   @questions = Question.all()

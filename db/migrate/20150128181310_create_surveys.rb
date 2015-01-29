@@ -4,6 +4,6 @@ class CreateSurveys < ActiveRecord::Migration
       t.column(:survey_name, :string)
 
       t.timestamps()
-
- end
+    end
+  end
 end
